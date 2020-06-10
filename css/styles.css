@@ -1,0 +1,392 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+:root {
+    --main-color: #000;
+    --second-color: gray;
+    --main-transition: all 0.3s ease-in;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* homepage */
+#homepage-button {
+    position: fixed;
+    top: 3rem;
+    left: 4rem;
+    width: 3rem;
+    height: 3rem;
+    background: url("../image/index-logo.png") no-repeat center center/cover;
+    cursor: pointer;
+    z-index: 2;
+}
+
+#menu-button {
+    position: fixed;
+    top: 3rem;
+    right: 4rem;
+    width: 3rem;
+    height: 3rem;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#menu-button i {
+    font-size: 2.5rem;
+    color: var(--main-color);
+    cursor: pointer;
+}
+
+.portfolio {
+    margin-bottom: 4rem;
+    padding: 0 11rem;
+    padding-top: 3rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-row-gap: 4rem;
+    grid-column-gap: 4rem;
+    justify-items: center;
+}
+.portfolio-item {
+    width: auto;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    transition: var(--main-transition);
+}
+.portfolio-item:hover {
+    opacity: 0.7;
+}
+
+.portfolio-item-image {
+    width: 100%;
+    height: 100%;
+}
+
+/* navbar */
+nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(128, 128, 128, 0.4);
+    z-index: 1;
+    visibility: hidden;
+}
+
+.menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 30vw;
+    height: 100vh;
+    padding-top: 9rem;
+    padding-left: 4rem;
+    background-color: #fff;
+    transform: translateX(100%);
+    transition: var(--main-transition);
+    z-index: 2;
+    overflow-y: auto;
+}
+.showMenu {
+    transform: translateX(0);
+}
+
+.transparentBcg {
+    visibility: visible;
+}
+
+#menu > a {
+    display: block;
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--second-color);
+    margin-bottom: 1rem;
+    transition: var(--main-transition);
+}
+
+#menu > a:hover {
+    color: var(--main-color);
+}
+
+.arrow {
+    visibility: hidden;
+    padding-left: 0;
+    transition: var(--main-transition);
+}
+
+#menu > a:hover .arrow {
+    visibility: visible;
+    padding-left: 0.3rem;
+}
+
+#menu .social-media a{
+    float: left;
+    margin-top: 10rem;
+    font-size: 1.5rem;
+    margin-right: 0.7rem;
+    color: var(--second-color);
+    transition: var(--main-transition);
+}
+
+#menu .social-media a:hover {
+    color: var(--main-color);
+}
+
+/* Porfolio page */
+.porfolio-container {
+    padding: 3rem 11rem;
+}
+.portfolio-title {
+    font-size: 2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+.portfolio-image-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.portfolio-image-container img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
+}
+.portfolio-description {
+    margin: 1rem 0;
+}
+
+/* About page */
+.about-container {
+    color: var(--main-color);
+    padding: 0 11rem;
+    padding-top: 3rem;
+    height: 100vh;
+}
+.about-hello {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+.about-me {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+}
+.about-details {
+    width: 40vw;
+}
+.about-details  p {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    line-height: 2rem;
+}
+#about-contact {
+    margin-top: 3rem;
+    margin-bottom: 0.8rem;
+    font-weight: 700;
+}
+#about-mail a{
+    color: var(--second-color);
+    text-decoration: none;
+}
+#about-mail a:hover {
+    color: var(--main-color);
+}
+#about-number, #about-mail {
+    margin-bottom: 0;
+}
+/* footer */
+.footer-container {
+    padding: 2rem 11rem;
+    background-color: var(--main-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.footer-container a {
+    color: #fff;
+    text-decoration: none;
+}
+.footer-link {
+    display: flex;
+    flex-direction: column;
+}
+.footer-link a {
+    font-size: 1.2rem;
+}
+
+.footer-social a {
+    font-size: 1.4rem;
+    margin-right: 0.5rem;
+}
+
+/* tablet */
+@media (max-width: 991px) {
+    /* Homepage */
+    #homepage-button {
+        top: 2rem;
+        left: 3rem;
+    }
+    #menu-button {
+        top: 2rem;
+        right: 3rem;
+    }
+    .portfolio {
+        grid-template-columns: repeat(2, 1fr);
+        grid-row-gap: 3rem;
+        grid-column-gap: 3rem;
+        padding: 0 9rem;
+        padding-top: 2rem;
+        margin-bottom: 3rem;
+    }
+    #menu {
+        padding-left: 3rem;
+    }
+    #menu > a {
+        font-size: 1.5rem;
+        font-weight: 700;    
+        margin-bottom: 1rem;
+    }
+    /* Porfolio page */
+    .porfolio-container {
+        padding: 2rem 9rem;
+    }
+    .portfolio-title {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+    .portfolio-image-container img {
+        margin-bottom: 0.5rem;
+    }
+    /* About page */
+    .about-container {
+        padding: 0 9rem;
+        padding-top: 2rem;
+    }
+    .about-hello {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+    }
+    .about-me {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 2rem;
+    }
+    .about-details {
+        width: 100%;
+    }
+    .about-details p {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+        line-height: 1.5rem;
+    }
+    #about-contact {
+        margin-top: 2rem;
+        margin-bottom: 0.6rem;
+    }
+}
+/* telefon */
+@media (max-width: 767px) {
+    /* Homepage */
+    #homepage-button {
+        top: 1rem;
+        left: 1rem;
+    }
+    #menu-button {
+        top: 1rem;
+        right: 1rem;
+    }
+    .portfolio {
+        grid-template-columns: 1fr;
+        grid-row-gap: 1rem;
+        grid-column-gap: 1rem;
+        padding: 1rem 1rem;
+        margin-bottom: 0;
+    }
+    #menu {
+        padding: 0;
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    #menu > a {
+        font-size: 2rem;
+        font-weight: 700;
+        color: var(--main-color);
+    }
+    #menu > a > i {
+        display: none;
+    }
+    #menu .social-media a{
+        font-size: 1.8rem;
+        margin-right: 0.9rem;
+        color: var(--main-color);
+    }
+    #menu .social-media a:last-child {
+        margin-right: 0;
+    }
+    /* Porfolio page */
+    .porfolio-container {
+        padding: 1rem 1rem;
+        padding-top: 5rem;
+    }
+    .portfolio-title {
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+    }
+    .portfolio-description, .portfolio-programme {
+        font-size: 0.9rem;
+    }
+    /* About page */
+    .about-container {
+        padding: 1rem 1rem;
+        padding-top: 5rem;
+    }
+    .about-hello {
+        font-size: 0.9rem;
+        margin-bottom: 1rem;
+    }
+    .about-me {
+        font-size: 1.1rem;
+        font-weight: 700;
+        margin-bottom: 1.1rem;
+    }
+    .about-details p {
+        font-size: 0.9rem;
+        margin-bottom: 0.5rem;
+        line-height: 1rem;
+    }
+    #about-number, #about-mail {
+        margin-bottom: 0.3rem;
+    } 
+    /* footer */
+    .footer-container {
+        padding: 2rem 0;
+        display: flex;
+        flex-direction: column;
+    }
+    .footer-link {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 1rem;
+    }
+}

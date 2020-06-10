@@ -37,8 +37,6 @@ class UI {
                 menu.classList.toggle("showMenu");
                 menuButton.firstElementChild.classList.remove("fa-bars");
                 menuButton.firstElementChild.classList.add("fa-times");
-                //window.open('mailto:test@example.com');
-                //window.open('mailto:test@example.com?subject=subject&body=body');
             } else {
                 navbar.classList.toggle("transparentBcg");
                 menu.classList.toggle("showMenu");
